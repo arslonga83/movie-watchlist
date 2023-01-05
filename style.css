@@ -5,11 +5,11 @@
 
 body {
   font-family: 'Inter', sans-serif;
-
+  height: 100vh;
 }
 
 header {
-  height: 208px;
+  height: 25vh;
   background: url(./assets/header-img.png);
   background-size: cover;
   background-position:initial;
@@ -25,6 +25,48 @@ header {
 .header-text {
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  
+  align-content: center; 
+}
+
+.search-bar {
+  position: absolute;
+  display: flex;
+  width: 50vw;
+  margin: -1em 25%;
+  border: 1px solid #D1D5DB;
+  border-radius: 0px 6px 6px 0px;
+}
+
+.icon {
+  position: absolute;
+  padding: 8px;
+}
+
+input, button {
+  font-family: inherit;
+  border: none;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em 2em;
+}
+
+button {
+  padding: 0 2em;
+  cursor: pointer;
+}
+
+main {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ height: 75vh;
+ color: #DFDDDD;
+}
+
+main i {
+  font-size: 5rem;
+  margin-bottom: 0.5em;
 }
