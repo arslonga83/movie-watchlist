@@ -93,6 +93,7 @@ main i {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  width: 100%;
 }
 
 .movie-title-container {
@@ -110,6 +111,7 @@ main i {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .watchlist-icon {
