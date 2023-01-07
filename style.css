@@ -63,6 +63,7 @@ main {
  align-items: center;
  flex-direction: column;
  margin-top: 2em;
+ padding: 0 4em;
  color: #DFDDDD;
 }
 
@@ -77,6 +78,7 @@ main i {
   margin: 0 3em 2em 3em;
   padding: 2em 3em;
   gap: 2em;
+  width: 100%;
   max-width: 1080px;
   color: #111827;
   border-bottom: 1px solid grey;
