@@ -73,16 +73,46 @@ main i {
 
 .movie-container {
   display: flex;
- 
+  align-items: center;
   margin: 0 3em 2em 3em;
-  padding: 1em 3em;
+  padding: 2em 3em;
   gap: 2em;
+  max-width: 1080px;
   color: #111827;
-  
+  border-bottom: 1px solid grey;
 }
 
 .movie-container img {
   width: 100px;
   height: auto;
-  
 }
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.movie-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-star {
+  color: #FEC654;
+  margin-left: 2em;
+  margin-right: 0.5em;
+}
+
+.movie-time-genre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.watchlist-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+

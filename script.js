@@ -23,6 +23,7 @@ function getResultsArray(ids) {
         resultsArray.push(data)
       })
   })
+  console.log(resultsArray)
   renderResults()
 }
 
@@ -35,6 +36,7 @@ function renderResults() {
     <div>
       <div>
         <h2>${movie.Title}</h2>
+        <i class="fa-solid fa-star"></i>
         <p>${movie.imdbRating}</p>
       </div>
       <div>
