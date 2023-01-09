@@ -28,6 +28,11 @@ header {
   align-content: center; 
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .search-bar {
   position: absolute;
   display: flex;

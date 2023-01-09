@@ -3,7 +3,6 @@ const searchBox = document.querySelector('#search')
 const main = document.querySelector('#main-section') 
 let resultsArray = []
 
-
 searchBtn.addEventListener('click', (e) => {
   fetch(`http://www.omdbapi.com/?apikey=4127127c&s=${searchBox.value}`)
   .then(res => res.json())
@@ -22,11 +21,9 @@ function getResultsArray(ids) {
       .then(res => res.json())
       .then(data => {
         resultsArray.push(data)
-      .then(renderResults())
       })
+      .then(renderResults)
   })
-  console.log(resultsArray)
-  // renderResults()
 }
 
 function renderResults() {
@@ -45,7 +42,7 @@ function renderResults() {
         <p>${movie.Runtime}</p>
         <p>${movie.Genre}</p>
         <div class="watchlist-icon">
-          <i class="fa-solid fa-circle-plus fa-sm"></i>
+          <i class="fa-solid fa-circle-plus fa-sm" data-imdbId=${movie.imdbID}></i>
           <p>Watchlist</p>
         </div>
         </div>
@@ -57,6 +54,8 @@ function renderResults() {
   main.innerHTML = moviesHtml
 }
 
-
-
-
+document.addEventListener('click', (e) => {
+  if (e.target.dataset.imdbId) {
+    console.log('click')
+  }
+})
