@@ -17,10 +17,15 @@ function search() {
   fetch(`http://www.omdbapi.com/?apikey=4127127c&s=${searchBox.value}`)
   .then(res => res.json())
   .then(data => {
-    const searchIds = data.Search.map((movie => {
+    if (data.Search) {
+      const searchIds = data.Search.map((movie => {
         return movie.imdbID
-    }))
-    getResultsArray(searchIds)
+      }))
+      getResultsArray(searchIds)
+    }
+    else {
+      main.innerHTML = `Unable to find what you're looking for. Please try another search.`
+    }
   })
 }
 
