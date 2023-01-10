@@ -72,7 +72,7 @@ button {
 }
 
 button:hover, button:focus {
-  transform: scale(1.1);
+  font-weight: bold;
   outline: none;
 }
 
@@ -82,7 +82,6 @@ main {
  align-items: center;
  justify-content: center;
  min-height: 75vh;
- /* overflow: scroll; */
  padding: 0 4em;
  color: #DFDDDD;
 }
@@ -126,12 +125,12 @@ main i {
 .movie-title-container {
   display: flex;
   align-items: center;
+  
 }
 
 .fa-star {
   color: #FEC654;
-  margin-left: 2em;
-  margin-right: 0.5em;
+  margin: auto 0.5em auto 2em;
 }
 
 .movie-time-genre {
@@ -147,15 +146,9 @@ main i {
   gap: 0.5em;
 }
 
-.bold-text {
-  font-weight: bold;
-  color: black;
-  font-size: 1.25rem;
-  margin-top: 2em;
-}
-
 .fa-circle-plus {
   cursor: pointer;
+  margin: auto;
 }
 
 .fa-circle-plus:hover {
@@ -168,6 +161,7 @@ main i {
 
 .fa-circle-minus {
   cursor: pointer;
+  margin: auto;
 }
 
 .fa-circle-minus:hover {
