@@ -2,6 +2,8 @@ const searchBtn = document.querySelector('#search-btn')
 const searchBox = document.querySelector('#search')
 const main = document.querySelector('#main-section') 
 let resultsArray = []
+
+// check for existing watchlist
 let watchlist = localStorage.getItem('watchlist') ? 
   JSON.parse(localStorage.getItem('watchlist')) : 
   []

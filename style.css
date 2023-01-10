@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -61,23 +62,36 @@ input {
   padding: 0.5em 2em;
 }
 
+input:focus {
+  outline: 2px solid #D1D5DB;
+}
+
 button {
   padding: 0 2em;
   cursor: pointer;
 }
 
-button:hover {
-  transform: scale(1.1)
+button:hover, button:focus {
+  transform: scale(1.1);
+  outline: none;
 }
 
 main {
  display: flex;
- justify-content: center; 
- align-items: center;
  flex-direction: column;
- margin-top: 2em;
+ align-items: center;
+ justify-content: center;
+ min-height: 75vh;
+ /* overflow: scroll; */
  padding: 0 4em;
  color: #DFDDDD;
+}
+
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
 }
 
 main i {
@@ -169,4 +183,34 @@ main i {
   display: flex;
   gap: 0.5em;
   align-items: center;
+}
+
+
+@media(max-width: 767px) {
+  .header-text {
+    font-size: 0.75rem;
+  }
+
+  .search-bar {
+    flex-direction: column; 
+    border: none;
+  }
+
+  button {
+    width: 50vw;
+    margin: auto;
+    padding: 0.5em;
+  }
+
+  .movie-container {
+    flex-direction: column;
+    font-size: 1rem;
+  }
+ 
+  .movie-time-genre {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
