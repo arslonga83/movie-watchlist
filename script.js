@@ -41,8 +41,8 @@ function renderResults() {
         <div class="movie-time-genre">
         <p>${movie.Runtime}</p>
         <p>${movie.Genre}</p>
-        <div class="watchlist-icon">
-          <i class="fa-solid fa-circle-plus fa-sm" data-imdbId=${movie.imdbID}></i>
+        <div class="watchlist-icon" data-imdbId=${movie.imdbID}>
+          <i class="fa-solid fa-circle-plus fa-sm" ></i>
           <p>Watchlist</p>
         </div>
         </div>
@@ -55,7 +55,10 @@ function renderResults() {
 }
 
 document.addEventListener('click', (e) => {
-  if (e.target.dataset.imdbId) {
+  if (e.target.dataset.imdbID) {
     console.log('click')
   }
 })
+
+
+export { renderResults }
