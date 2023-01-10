@@ -33,6 +33,10 @@ a {
   color: white;
 }
 
+a:hover {
+  color: #D1D5DB;
+}
+
 .search-bar {
   position: absolute;
   display: flex;
@@ -60,6 +64,10 @@ input {
 button {
   padding: 0 2em;
   cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1)
 }
 
 main {
@@ -123,14 +131,24 @@ main i {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  
 }
 
 .fa-circle-plus {
   cursor: pointer;
 }
 
+.fa-circle-plus:hover {
+  color: #D1D5DB;
+}
+
+.fa-circle-plus:active {
+  color: red;
+}
+
 .fa-circle-minus {
   cursor: pointer;
 }
 
+.fa-circle-minus:hover {
+  color: #D1D5DB;
+}

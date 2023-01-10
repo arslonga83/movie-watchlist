@@ -1,5 +1,3 @@
-
-
 const main = document.querySelector('#main-section') 
 let resultsArray = []
 

@@ -6,7 +6,14 @@ let watchlist = localStorage.getItem('watchlist') ?
   JSON.parse(localStorage.getItem('watchlist')) : 
   []
 
-searchBtn.addEventListener('click', (e) => {
+searchBtn.addEventListener('click', search) 
+searchBox.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    search()
+  }
+})
+
+function search() {
   fetch(`http://www.omdbapi.com/?apikey=4127127c&s=${searchBox.value}`)
   .then(res => res.json())
   .then(data => {
@@ -15,7 +22,7 @@ searchBtn.addEventListener('click', (e) => {
     }))
     getResultsArray(searchIds)
   })
-})
+}
 
 function getResultsArray(ids) {
   resultsArray = []
@@ -60,6 +67,7 @@ function renderResults() {
 document.addEventListener('click', (e) => {
   if (e.target.dataset.id) {
     watchlist.push(e.target.dataset.id)
+    e.target.style.color = 'red'
     localStorage.setItem('watchlist', JSON.stringify(watchlist))
     console.log(JSON.parse(localStorage.getItem('watchlist')))
   }
