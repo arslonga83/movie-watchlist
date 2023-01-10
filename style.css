@@ -133,6 +133,13 @@ main i {
   gap: 0.5em;
 }
 
+.bold-text {
+  font-weight: bold;
+  color: black;
+  font-size: 1.25rem;
+  margin-top: 2em;
+}
+
 .fa-circle-plus {
   cursor: pointer;
 }
@@ -151,4 +158,15 @@ main i {
 
 .fa-circle-minus:hover {
   color: #D1D5DB;
+}
+
+.watchlist-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.25rem;
+  margin-top: 2em;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
 }
