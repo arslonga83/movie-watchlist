@@ -25,7 +25,7 @@ function renderResults() {
   let moviesHtml = ''
   resultsArray.map((movie) => {
   moviesHtml += `
-  <div class="movie-container">
+  <div class="movie-container" id=${movie.imdbID}>
       <img src=${movie.Poster}>
       <div class="movie-details">
         <div class="movie-title-container">
@@ -54,7 +54,7 @@ document.addEventListener('click', (e) => {
     watchlistIds = watchlistIds.filter(id => id != e.target.dataset.id)
     console.log(watchlistIds)
     localStorage.setItem('watchlist', JSON.stringify(watchlistIds))
-    getResultsArray(watchlistIds)
+    document.getElementById(e.target.dataset.id).remove()
   }
 })
 
