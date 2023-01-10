@@ -3,8 +3,7 @@
 const main = document.querySelector('#main-section') 
 let resultsArray = []
 
-const watchlistIds = JSON.parse(localStorage.getItem('watchlist'))
-console.log(JSON.parse(localStorage.getItem('watchlist')))
+let watchlistIds = JSON.parse(localStorage.getItem('watchlist'))
 
 if (watchlistIds) {
   getResultsArray(watchlistIds)
@@ -50,4 +49,13 @@ function renderResults() {
   main.innerHTML = moviesHtml
 }
 
-console.log('hello world')
+document.addEventListener('click', (e) => {
+  if (e.target.dataset.id) {
+    watchlistIds = watchlistIds.filter(id => id != e.target.dataset.id)
+    console.log(watchlistIds)
+    localStorage.setItem('watchlist', JSON.stringify(watchlistIds))
+    getResultsArray(watchlistIds)
+  }
+})
+
+
