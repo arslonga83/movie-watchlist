@@ -123,6 +123,9 @@ main i {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  cursor: pointer;
+  
 }
 
+.fa-circle-plus {
+  cursor: pointer;
+}

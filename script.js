@@ -2,6 +2,9 @@ const searchBtn = document.querySelector('#search-btn')
 const searchBox = document.querySelector('#search')
 const main = document.querySelector('#main-section') 
 let resultsArray = []
+let watchlist = localStorage.getItem('watchlist') ? 
+  JSON.parse(localStorage.getItem('watchlist')) : 
+  []
 
 searchBtn.addEventListener('click', (e) => {
   fetch(`http://www.omdbapi.com/?apikey=4127127c&s=${searchBox.value}`)
@@ -41,8 +44,8 @@ function renderResults() {
         <div class="movie-time-genre">
         <p>${movie.Runtime}</p>
         <p>${movie.Genre}</p>
-        <div class="watchlist-icon" data-imdbId=${movie.imdbID}>
-          <i class="fa-solid fa-circle-plus fa-sm" ></i>
+        <div class="watchlist-icon" >
+          <i class="fa-solid fa-circle-plus fa-sm" data-id="${movie.imdbID}"></i>
           <p>Watchlist</p>
         </div>
         </div>
@@ -55,10 +58,9 @@ function renderResults() {
 }
 
 document.addEventListener('click', (e) => {
-  if (e.target.dataset.imdbID) {
-    console.log('click')
+  if (e.target.dataset.id) {
+    watchlist.push(e.target.dataset.id)
+    localStorage.setItem('watchlist', JSON.stringify(watchlist))
+    console.log(JSON.parse(localStorage.getItem('watchlist')))
   }
 })
-
-
-export { renderResults }
