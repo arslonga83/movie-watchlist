@@ -12,7 +12,7 @@ if (watchlistIds) {
 function getResultsArray(ids) {
   resultsArray = []
   ids.map((id) => {
-    fetch(`http://www.omdbapi.com/?apikey=4127127c&i=${id}&plot=short`)
+    fetch(`https://www.omdbapi.com/?apikey=4127127c&i=${id}&plot=short`)
       .then(res => res.json())
       .then(data => {
         resultsArray.push(data)
