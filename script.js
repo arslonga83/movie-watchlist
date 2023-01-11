@@ -32,7 +32,7 @@ function search() {
 }
 
 //2nd api call by id is necessary to get full plot descriptions
-export function getResultsArray(ids) {
+function getResultsArray(ids) {
   resultsArray = []
   ids.map((id) => {
     fetch(`http://www.omdbapi.com/?apikey=4127127c&i=${id}&plot=short`)
