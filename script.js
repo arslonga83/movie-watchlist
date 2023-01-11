@@ -63,7 +63,7 @@ function getResultsHtml() {
         <p>${movie.Runtime}</p>
         <p>${movie.Genre}</p>
         <div class="watchlist-icon" >
-          <i class="fa-solid fa-circle-plus fa-sm" data-id="${movie.imdbID}"></i>
+          <i class="fa-solid fa-circle-plus fa-sm" data-id="${movie.imdbID}" style=${watchlist.includes(movie.imdbID) ? "color:red" : ""}></i>
           <p>Watchlist</p>
         </div>
         </div>
