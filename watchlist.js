@@ -55,7 +55,7 @@ function getWatchlistHtml() {
 document.addEventListener('click', (e) => {
   if (e.target.dataset.id) {
     watchlistIds = watchlistIds.filter(id => id != e.target.dataset.id)
-    console.log(watchlistIds)
+    // console.log(watchlistIds)
     localStorage.setItem('watchlist', JSON.stringify(watchlistIds))
     document.getElementById(e.target.dataset.id).remove()
   }

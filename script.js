@@ -80,6 +80,6 @@ document.addEventListener('click', (e) => {
     watchlist.push(e.target.dataset.id)
     e.target.style.color = 'red'
     localStorage.setItem('watchlist', JSON.stringify(watchlist))
-    console.log(JSON.parse(localStorage.getItem('watchlist')))
+    // console.log(JSON.parse(localStorage.getItem('watchlist')))
   }
 })
