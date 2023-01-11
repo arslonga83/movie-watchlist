@@ -31,7 +31,7 @@ function search() {
   })
 }
 
-function getResultsArray(ids) {
+export function getResultsArray(ids) {
   resultsArray = []
   ids.map((id) => {
     fetch(`http://www.omdbapi.com/?apikey=4127127c&i=${id}&plot=short`)
@@ -44,6 +44,10 @@ function getResultsArray(ids) {
 }
 
 function renderResults() {
+  main.innerHTML = getResultsHtml()
+}
+
+function getResultsHtml() {
   let moviesHtml = ''
   resultsArray.map((movie) => {
   moviesHtml += `
@@ -51,7 +55,7 @@ function renderResults() {
       <img src=${movie.Poster}>
       <div class="movie-details">
         <div class="movie-title-container">
-          <h2>${movie.Title}</h2>
+          <h2>${movie.Title}</h2> 
           <i class="fa-solid fa-star fa-xs"></i>
           <p>${movie.imdbRating}</p>
         </div>
@@ -68,11 +72,11 @@ function renderResults() {
     </div>
   `
   })
-  main.innerHTML = moviesHtml
+  return moviesHtml
 }
 
 document.addEventListener('click', (e) => {
-  if (e.target.dataset.id) {
+  if (e.target.dataset.id && !watchlist.includes(e.target.dataset.id)) {
     watchlist.push(e.target.dataset.id)
     e.target.style.color = 'red'
     localStorage.setItem('watchlist', JSON.stringify(watchlist))

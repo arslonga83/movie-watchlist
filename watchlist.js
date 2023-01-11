@@ -1,3 +1,4 @@
+
 const main = document.querySelector('#main-section') 
 let resultsArray = []
 
@@ -20,9 +21,13 @@ function getResultsArray(ids) {
 }
 
 function renderResults() {
-  let moviesHtml = ''
+  main.innerHTML = getWatchlistHtml()
+}
+
+function getWatchlistHtml() {
+  let watchlistHtml = ''
   resultsArray.map((movie) => {
-  moviesHtml += `
+  watchlistHtml += `
   <div class="movie-container" id=${movie.imdbID}>
       <img src=${movie.Poster}>
       <div class="movie-details">
@@ -44,7 +49,7 @@ function renderResults() {
     </div>
   `
   })
-  main.innerHTML = moviesHtml
+  return watchlistHtml
 }
 
 document.addEventListener('click', (e) => {
@@ -55,5 +60,3 @@ document.addEventListener('click', (e) => {
     document.getElementById(e.target.dataset.id).remove()
   }
 })
-
-
