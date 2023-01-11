@@ -2,6 +2,7 @@
 const main = document.querySelector('#main-section') 
 let resultsArray = []
 
+//check for existing watchlist
 let watchlistIds = JSON.parse(localStorage.getItem('watchlist'))
 
 if (watchlistIds) {
@@ -52,6 +53,7 @@ function getWatchlistHtml() {
   return watchlistHtml
 }
 
+//listener for remove buttons
 document.addEventListener('click', (e) => {
   if (e.target.dataset.id) {
     watchlistIds = watchlistIds.filter(id => id != e.target.dataset.id)

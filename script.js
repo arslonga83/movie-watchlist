@@ -31,6 +31,7 @@ function search() {
   })
 }
 
+//2nd api call by id is necessary to get full plot descriptions
 export function getResultsArray(ids) {
   resultsArray = []
   ids.map((id) => {
@@ -75,6 +76,7 @@ function getResultsHtml() {
   return moviesHtml
 }
 
+//listener for add to watchlist buttons
 document.addEventListener('click', (e) => {
   if (e.target.dataset.id && !watchlist.includes(e.target.dataset.id)) {
     watchlist.push(e.target.dataset.id)
